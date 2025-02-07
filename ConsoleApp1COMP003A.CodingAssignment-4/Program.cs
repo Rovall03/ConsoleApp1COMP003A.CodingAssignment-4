@@ -63,7 +63,7 @@ namespace ConsoleApp1
                         int index = Array.IndexOf(productNames, "Apples");
                         if (index != -1)
                         {
-                            productQuantities[index] = 100;
+                            productQuantities[index] = ;
                         }
                         else
                         {
@@ -73,8 +73,16 @@ namespace ConsoleApp1
                     }
                     if (menu == 3)
                     { 
-                    
-                    
+                        Console.WriteLine("iventory");
+                        int totalQuantities = 0;
+
+                        for (int i = 0; i<productNames ;i++ )
+                            {
+                            Console.WriteLine($"- {productNames}:{ productQuantities}");
+                            totalQuantities += productQuantities[i];
+                        }
+
+
                     }
                  
                 }if(menu == 4)
