@@ -1,4 +1,9 @@
-﻿using System.ComponentModel.Design;
+﻿// Author: Rosa Ovalle
+// Course: COMP-003A
+// Faculty: Jonathan Cruz
+// Purpose: Inventory management application with a minimum of 10 elements in the collection.
+
+using System.ComponentModel.Design;
 
 namespace ConsoleApp1
 {
