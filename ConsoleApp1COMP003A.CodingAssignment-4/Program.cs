@@ -39,15 +39,15 @@ namespace ConsoleApp1
                     if (count < productNames.Length)
                     {
                         Console.Write("Name of product: ");
-                        product =Console.ReadLine();
-                                           
+                        product = Console.ReadLine();
+
                         Console.Write("Quantity amount: ");
                         amount = int.Parse(Console.ReadLine());
                         productNames[count] = product;
-                        
+
                         productQuantities[count] = amount;
-                        
-                        
+
+
                         count++;
                         Console.WriteLine("Product added successfully!");
                     }
@@ -55,43 +55,59 @@ namespace ConsoleApp1
                     {
                         Console.WriteLine("Inventory is full!");
                     }
-                    
-                    if (menu == 2)
-                        {
-                      
-                        Console.Write("Enter Product name to update: ");
-                        int index = Array.IndexOf(productNames, "Apples");
-                        if (index != -1)
-                        {
-                            productQuantities[index] = ;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Product not found.");
-                        }
+                }
 
-                    }
-                    if (menu == 3)
-                    { 
-                        Console.WriteLine("iventory");
-                        int totalQuantities = 0;
-
-                        for (int i = 0; i<productNames ;i++ )
-                            {
-                            Console.WriteLine($"- {productNames}:{ productQuantities}");
-                            totalQuantities += productQuantities[i];
-                        }
-
-
-                    }
-                 
-                }if(menu == 4)
+                else if (menu == 2)
                 {
-                    break;
-                }
+
+                    Console.Write(" name of product to update: ");
+
+                    int index = Array.IndexOf(productNames, "Apples");
+                    if (index != -1)
+                    {
+                        int updatedQ = int.Parse(Console.ReadLine());
+                        productQuantities[index] = updatedQ;
+                        Console.WriteLine("New Amount");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Product not found.");
+                    }
 
                 }
+                else if (menu == 3)
+                {
+                    Console.WriteLine("iventory");
+                    int totalQuantities = 0;
+
+
+                    for (int i = 0; i < count; i++)
+                    {
+                        totalQuantities += productQuantities[i];
+                    }
+                    double sum = 0;
+                    foreach (int quantiy in productQuantities)
+                    {
+                        sum += quantiy;
+
+
+                    }
+                    double average = sum / count;
+
+                        Console.WriteLine($" {product}-{amount}");
+                        Console.WriteLine($"products {count}");
+                        Console.WriteLine($" Average: {average}");
+                        
+                    
+                
+                }
+                    if (menu == 4)
+                    {
+                        break;
+                    }
+
+                
+            }
         }
-
         }
     }
