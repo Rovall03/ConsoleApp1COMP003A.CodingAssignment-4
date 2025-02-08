@@ -59,16 +59,21 @@ namespace ConsoleApp1
 
                 else if (menu == 2)
                 {
-
                     Console.Write(" name of product to update: ");
-
-                    int index = Array.IndexOf(productNames, "Apples");
+                    string names = Console.ReadLine();
+                    int index = Array.IndexOf(productNames, names);
                     if (index != -1)
-                    {
-                        int updatedQ = int.Parse(Console.ReadLine());
-                        productQuantities[index] = updatedQ;
-                        Console.WriteLine("New Amount");
+                    
+                        
+                        {
+
+                        Console.Write("new amount: ");
+                        int updatedQ  = int.Parse(Console.ReadLine());
+                            productQuantities[index] = updatedQ;
+                            Console.WriteLine( $"new amount updated:{updatedQ}");
+                        
                     }
+
                     else
                     {
                         Console.WriteLine("Product not found.");
@@ -84,6 +89,7 @@ namespace ConsoleApp1
                     for (int i = 0; i < count; i++)
                     {
                         totalQuantities += productQuantities[i];
+                        Console.WriteLine($"{i + 1}:{productNames[i]}- {productQuantities[i]}");
                     }
                     double sum = 0;
                     foreach (int quantiy in productQuantities)
@@ -94,7 +100,7 @@ namespace ConsoleApp1
                     }
                     double average = sum / count;
 
-                        Console.WriteLine($" {product}-{amount}");
+                        
                         Console.WriteLine($"products {count}");
                         Console.WriteLine($" Average: {average}");
                         
